@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
 
     int totalRemoved = 0;
 
-    void Start()
+    void Awake()
     {
         minBoundary = transform.position - (transform.localScale / 2f);
         maxBoundary = transform.position + (transform.localScale / 2f);

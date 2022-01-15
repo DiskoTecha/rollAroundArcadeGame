@@ -13,7 +13,7 @@ public class LevelController : MonoBehaviour
     protected void Start()
     {
         currentLevel = 1;
-        RespawnObjectives();
+        InitialObjectiveSpawn();
     }
 
     public virtual void LevelUp()
@@ -37,5 +37,13 @@ public class LevelController : MonoBehaviour
     public int GetCurrentLevel()
     {
         return currentLevel;
+    }
+
+    private void InitialObjectiveSpawn()
+    {
+        for (int i = 0; i < objectivesNeeded; i++)
+        {
+            objectiveSpawners[Random.Range(0, objectiveSpawners.Length)].Spawn(6);
+        }
     }
 }
